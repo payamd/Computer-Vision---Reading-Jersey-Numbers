@@ -50,19 +50,11 @@ The system ranks players by frequency
 The top 3 players are displayed to the user
 
 # 📂 Project Structure
-.
-├── app.py                 # Main Flask application
-├── detect.py              # AI detection logic (process_frame, player_counts)
-├── uploads/               # Uploaded videos
-├── outputs/
-│   └── output_frames/     # Extracted video frames
-├── templates/
-│   ├── index.html         # Upload page
-│   └── results.html       # Results display
-▶️ Installation & Setup
+<img width="681" height="190" alt="image" src="https://github.com/user-attachments/assets/48394f2e-ae0a-4c68-9d47-e02cc1b3478a" />
+
+# ▶️ Installation & Setup
 1. Clone the repository
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+git clone https://github.com/payamd/Computer-Vision---Reading-Jersey-Numbers.git
 2. Create a virtual environment (recommended)
 python -m venv venv
 source venv/bin/activate   # macOS/Linux
@@ -74,34 +66,13 @@ pip install flask opencv-python
 python app.py
 5. Open in browser
 http://127.0.0.1:5000/
-📊 Example Output
+# 📊 Example Output
 Top 3 Most Detected Players:
 Player 10 → 120 frames
 Player 7  → 95 frames
 Player 23 → 80 frames
-⚠️ Current Limitations
 
-Processing is synchronous (can be slow for long videos)
-
-Frames are saved to disk (not memory optimized)
-
-Global state (player_counts) is not thread-safe
-
-No progress indicator during processing
-
-🔮 Future Improvements
-
-⏱️ Add asynchronous/background processing (e.g., Celery)
-
-⚡ Optimize frame processing (skip frames / in-memory processing)
-
-📈 Add real-time progress updates
-
-🎯 Improve detection accuracy with deep learning models
-
-☁️ Deploy using Docker / Cloud services
-
-💡 Use Cases
+#💡 Use Cases
 
 Sports analytics
 
@@ -111,19 +82,11 @@ Highlight generation
 
 Broadcast analysis
 
-👤 Author
+# 👤 Author
 
-Payam
+Payam Davoudi
 Full-stack developer with a focus on AI-driven applications and scalable systems.
 
-📄 License
+# 📄 License
 
 This project is licensed under the MIT License.
-
-If you want, I can also:
-
-tailor this README specifically for job applications
-
-add screenshots / demo GIFs
-
-or make it more impressive for recruiters (very important for you right now)
