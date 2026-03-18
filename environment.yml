@@ -1,0 +1,15 @@
+name: VideoShipChallenge
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10  # Compatible with NumPy 1.24.2 and packages
+  - numpy=1.24.2
+  - matplotlib=3.7.1
+  - flask>=2.2
+  - pip
+  - pip:
+      - easyocr==1.6.2
+      - opencv-python-headless==4.5.4.60
+      - Pillow<10
+

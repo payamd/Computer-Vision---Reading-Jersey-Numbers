@@ -1,0 +1,106 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Jersey Detection</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h2>Upload a Sports Video</h2>-->
+<!--    <form action="/upload" method="post" enctype="multipart/form-data">-->
+<!--        <input type="file" name="video">-->
+<!--        <input type="submit" value="Upload">-->
+<!--    </form>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jersey Detection</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            background: linear-gradient(to right, #4e54c8, #8f94fb);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+
+        .card {
+            border-radius: 1rem;
+            background-color: rgba(255, 255, 255, 0.95);
+            color: #333;
+            max-width: 500px;
+            width: 100%;
+
+        }
+
+        .form-label {
+            font-weight: 500;
+        }
+
+        h2 {
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow-lg p-4">
+        <h2 class="mb-4 text-center text-primary">🏈 Jersey Number Detection</h2>
+        <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+            <div class="mb-3">
+                <label for="video" class="form-label">Choose a sports video:</label>
+                <input class="form-control" type="file" name="video" id="video" accept="video/*" required>
+                <div id="errorMessage" class="error" style="display: none;">Please upload a video before proceeding.</div>
+            </div>
+            <div class="d-grid">
+                <button id="uploadBtn" type="submit" class="btn btn-success">Upload & Process</button>
+            </div>
+            <br>
+            <p id="hidden" class="alert alert-info" style="display: none;">
+                <strong>Processing!</strong> Please check the application's console logs for more info.
+            </p>
+        </form>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+<script>
+    function showProcessingMessage() {
+        const button = document.getElementById("uploadBtn");
+        button.disabled = true;
+        button.innerHTML = `<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Processing...`;
+        document.getElementById("hidden").style.display = "block";
+    }
+
+    function validateForm() {
+        const videoInput = document.getElementById("video");
+        const errorMessage = document.getElementById("errorMessage");
+
+        if (!videoInput.files.length) {
+            // no file is selected
+            errorMessage.style.display = "block";
+            return false;
+        }
+
+        // If file is selected, hide error message and proceed with processing
+        errorMessage.style.display = "none";
+        showProcessingMessage();
+        return true;
+    }
+</script>
+</html>
+
