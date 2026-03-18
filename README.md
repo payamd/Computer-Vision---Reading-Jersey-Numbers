@@ -1,5 +1,5 @@
-🎥 AI-Based Player Detection from Sports Videos
-📌 Overview
+# AI-Based Player Detection from Sports Videos
+# 📌 Overview
 
 This project is a web-based application that allows users to upload a sports video and automatically analyzes it to identify and rank players based on how frequently they appear.
 
@@ -31,7 +31,7 @@ Frontend: HTML (Flask templates)
 
 Other: UUID, OS file handling
 
-⚙️ How It Works
+# ⚙️ How It Works
 
 User uploads a video via the web interface
 
@@ -49,7 +49,7 @@ The system ranks players by frequency
 
 The top 3 players are displayed to the user
 
-📂 Project Structure
+# 📂 Project Structure
 .
 ├── app.py                 # Main Flask application
 ├── detect.py              # AI detection logic (process_frame, player_counts)
